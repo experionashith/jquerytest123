@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+     rel = "stylesheet">
+  <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="my.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+
+
+  <script type="text/javascript">
+   function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+
+
+          function toggle_visibility1(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'none')
+          e.style.display = 'block';
+       else
+          e.style.display = 'none';
+   }
+   }
+</script>
+</head>
+<body>
+
+  <div class="rows row1">
+               <h1><b>ACCIDENT REGISTRY</b></h1>
+           </div>
+
+
+
+
+
+
+<div class="container">
+  <div class="row content">
+<div class="col-sm-1 ">
+  </div>
+  <div class="col-sm-10 ">
+
+
+
+
+        <h2>FILL THE FORM</h2>
+
+
+
+        <form>
+          <div class="form-group">
+            <label for="refnum">Reference Number</label>
+            <input type="text" class="form-control" id="refnum" placeholder="Enter Reference Number">
+          </div>
+          <div class="form-group">
+            <label for="Accdate">Accident Date</label>
+           <input type="text" class="form-control date" id="datepicker-13" placeholder="Select Date ">
+        <!--  <input type="date" class="form-control date"  placeholder="Select Date ">-->
+          </div>
+          <div class="form-group">
+            <label for="acctime">Accident Time</label>
+            <input type="time" class="form-control" id="time" placeholder="Enter Accident Time">
+          </div>
+          <div class="form-group">
+            <label for="acctype">Accident Type</label>
+             <select class="form-control" id="acctype">
+              <option>select</option>
+                <option>Hit Pedestrian</option>
+                <option>Head On</option>
+                <option>Side Swipe</option>
+                <option>Hit from Rear</option>
+                <option>Hit Animal</option>
+                <option>Ran off the Road</option>
+              </select>
+              </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control date" id="city" placeholder="Enter City">
+          </div>
+            <div class="form-group">
+              <label for="district">District</label>
+               <select class="form-control" id="district">
+								<option>select</option>
+    							<option>Alappuzha</option>
+    							<option>Ernakulam</option>
+    							<option>Idukki</option>
+    							<option>Kannur</option>
+                  <option>Kasaragod</option>
+    							<option>Kollam</option>
+    							<option>Kottayam</option>
+    							<option>Kozhikode</option>
+                  <option>Malappuram</option>
+    							<option>Palakkad</option>
+    							<option>Pathanamthitta</option>
+    							<option>Thiruvananthapuram</option>
+                  <option>Thrissur</option>
+    							<option>Wayanad</option>
+    						</select>
+                </div>
+
+                <div class="form-group">
+                  <label for="noofveh">Number of Vehicles</label>
+                  <input type="number" min="1" class="form-control date" id="noofveh" placeholder="Enter Number of Vehicles">
+                </div>
+                <div class="form-group">
+                  <label for="noofcas">Number of Casualties</label>
+                  <input type="number" class="form-control date" id="noofcas" placeholder="Enter Number of Casualties">
+                </div>
+                <div class="form-group">
+                  <label for="repofname">Reporting Officer Name</label>
+                  <input type="text" class="form-control date" id="repofname" placeholder="Enter Reporting Officer Name">
+                </div>
+
+                <div class="form-group">
+                  <label for="img">Upload Image</label>
+                <input id="inp" type='file'>
+                <p id="b64"></p>
+
+                </div>
+              <!--  <img id="img" height="150">-->
+
+
+
+
+          <button type="submit" class="btn btn-default" id="add" onclick="toggle_visibility('show');">Save</button>
+          <button type="reset" class="btn btn-default"id="clear">Reset</button>
+<br><br><br><br>
+
+
+        </form>
+
+
+  </div>
+
+  <div class="col-sm-1 ">
+  </div>
+</div>
+</div>
+
+<!--  <div class="rows row2">
+               <h5>Copyright 2016. My First Site.</h5>
+           </div> -->
+
+
+
+    </body>
+    </html>
