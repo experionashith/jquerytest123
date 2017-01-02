@@ -23,21 +23,26 @@ var flag1;
 var image;
 var temp=localStorage.getItem("flag");
 flag=parseInt(temp);
+
 var userstring= localStorage.getItem("userout");
 result=JSON.parse(userstring);
-var len=result.length;
-console.log(result[0].id);
 
-if (flag==1) {
-  $("#refnum").val(result[0].id);
-  $("#date").val(result[0].date);
-  $("#acctype").val(result[0].acctype);
-  $("#city").val(result[0].city);
-  $("#district").val(result[0].district);
-  $("#noofveh").val(result[0].noofveh);
-  $("#noofcas").val(result[0].noofcas);
-  $("#repofname").val(result[0].repofname);
-  localStorage.setItem("flag", "0");
+if(result != null){
+  var len=result.length;
+  console.log(result[0].id);
+
+  if (flag==1) {
+    $("#refnum").val(result[0].id);
+    $("#date").val(result[0].date);
+    $("#acctype").val(result[0].acctype);
+    $("#city").val(result[0].city);
+    $("#district").val(result[0].district);
+    $("#noofveh").val(result[0].noofveh);
+    $("#noofcas").val(result[0].noofcas);
+    $("#repofname").val(result[0].repofname);
+    localStorage.setItem("flag", "0");
+  }
+
 }
     $("#datepicker-13").datepicker({ format: 'dd/mm/yyyy', maxDate: new Date() });
     $("#datepicker-13").datepicker("show");
@@ -160,7 +165,7 @@ if (flag==1) {
             localStorage.setItem("userout", myJSON);
             //  localStorage.setItem("userlist", myJSON);
             alert('Data successfully saved in localStorage');
-             window.location.replace("file:///home/exp/madan/test/jquerytest1/form1.html");
+             window.location.replace("./form1.html");
 //<div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
 
       /*      var i;
@@ -198,18 +203,5 @@ if (flag==1) {
             }*/
         }
     });
-    function readFile() {
-      if (this.files && this.files[0]) {
-        var FR= new FileReader();
-        FR.onload = function(e) {
-          document.getElementById("img").src       = e.target.result;
-          document.getElementById("b64").innerHTML = e.target.result;
-          image=stringify(img.src);
-          localStorage.setItem("image",image );//console.log(img.src);
-        };
-        FR.readAsDataURL( this.files[0] );
-      }
-    }
 
-    document.getElementById("inp").addEventListener("change", readFile, false);
 });

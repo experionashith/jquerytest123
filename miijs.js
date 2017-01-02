@@ -23,7 +23,8 @@ console.log(userstring);
 console.log(result[0].time);
 
 window.onload = function(){
-  var len=result.length;
+  if(result !== undefined || result !== null)
+  {var len=result.length;
   console.log(len);
 
 
@@ -39,48 +40,39 @@ window.onload = function(){
 
 
   $("#table").append('<tr><td>' + refnum + '</td><td>' + date + '</td><td>' + time + '</td><td>' + acctype +  '</td></td>' + city + '</td><td>' + district + '</td><td>' + noofveh + '</td><td>' + noofcas +  '</td><td>' + repofname + '<td><tr>');
-
+}
 };
+
 $("#add1").click(function(e) {
-  var flag2=0;
+    var flag2=0;
     e.preventDefault();
     var userstring1= localStorage.getItem("userlist");
     result1=JSON.parse(userstring1);
-var leng=result1.length;
-var i;
-for (var i = 0; i < result1.length; i++) {
-  userdata1.push(result1[i]);
-  if (result1[i].id==refnum) {
-    alert('Reference number already exist');
-    flag2=1
-  }
-}
+    var leng=result1.length;
+    var i;
+    for (var i = 0; i < result1.length; i++) {
+        userdata1.push(result1[i]);
 
-if(flag2==0)
-{
-    alert('Data successfully saved ');
-myObj1 = { "id":refnum, "date":date,"time":time, "acctype":acctype,"city":city,
- "district":district, "noofveh":noofveh,"noofcas":noofcas,"repofname":repofname};
+          }
 
-userdata1.push(myObj1);
-myJSON1 = JSON.stringify(userdata1);
-localStorage.setItem("userlist", myJSON1);
-  window.location.replace("file:///home/exp/madan/test/jquerytest1/form.html");
-}
-});
+
+
+          alert('Data successfully saved ');
+          myObj1 = { "id":refnum, "date":date,"time":time, "acctype":acctype,"city":city,
+ "district":district, "noofveh":noofveh,"noofcas":noofcas,"repofname":noofcas};
+
+          userdata1.push(myObj1);
+          myJSON1 = JSON.stringify(userdata1);
+          localStorage.setItem("userlist", myJSON1);
+          window.location.replace("./form.html");
+
+    });
 
 
 $("#add2").click(function(e) {
     e.preventDefault();
-    window.location.replace("file:///home/exp/madan/test/jquerytest1/form.html");
+    window.location.replace("./form.html");
     localStorage.setItem("flag", "1");
-  /*  alert('Data successfully saved ');
-myObj = { "id":refnum, "date":date,"time":time, "acctype":acctype,"city":city,
- "district":district, "noofveh":noofveh,"noofcas":noofcas,"repofname":noofcas};
+});
 
-userdata.push(myObj);
-myJSON = JSON.stringify(userdata);
-localStorage.setItem("userlist", myJSON);*/
 });
-});
- //
