@@ -5,7 +5,7 @@ $(function() {
   var myObj1={};
   var userdata1=new Array();
   var myJSON1={};
-  var flag3=0;
+  var img = new Image();
   var userstring= localStorage.getItem("userout");
   result=JSON.parse(userstring);
 
@@ -44,23 +44,13 @@ window.onload = function(){
 };
 
 $("#add1").click(function(e) {
-  e.preventDefault();
-
+e.preventDefault();
+  alert('Data successfully saved ');
     var flag2=0;
 
-    if (flag3==0) {
-      alert('Data successfully saved ');
-      myObj1 = { "id":refnum, "date":date,"time":time, "acctype":acctype,"city":city,
-      "district":district, "noofveh":noofveh,"noofcas":noofcas,"repofname":noofcas};
-      userdata1.push(myObj1);
-      myJSON1 = JSON.stringify(userdata1);
-      localStorage.setItem("userlist", myJSON1);
-      window.location.replace("./form.html");
-      flag3=1;
-    }
-    else{
     var userstring1= localStorage.getItem("userlist");
     result1=JSON.parse(userstring1);
+    if(result1 != null){
     var leng=result1.length;
     var i;
     for (var i = 0; i < result1.length; i++) {
@@ -70,19 +60,18 @@ $("#add1").click(function(e) {
             flag2=1
           }
         }
-
+}
       if(flag2==0)
       {
           alert('Data successfully saved ');
           myObj1 = { "id":refnum, "date":date,"time":time, "acctype":acctype,"city":city,
- "district":district, "noofveh":noofveh,"noofcas":noofcas,"repofname":noofcas};
+ "district":district, "noofveh":noofveh,"noofcas":noofcas,"repofname":repofname};
 
           userdata1.push(myObj1);
           myJSON1 = JSON.stringify(userdata1);
           localStorage.setItem("userlist", myJSON1);
           window.location.replace("./form.html");
         }
-      }
     });
 
 
@@ -91,5 +80,10 @@ $("#add2").click(function(e) {
     window.location.replace("./form.html");
     localStorage.setItem("flag", "1");
 });
+
+    var img = localStorage.getItem("image");
+      document.getElementById("img").src       = img;
+
+
 
 });

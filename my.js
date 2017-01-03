@@ -203,5 +203,20 @@ if(result != null){
             }*/
         }
     });
+    function readFile() {
+      var image;
+      if (this.files && this.files[0]) {
+        var FR= new FileReader();
+        FR.onload = function(e) {
+          document.getElementById("img").src       = e.target.result;
+          image=e.target.result;
+          console.log(image);
+          localStorage.setItem("image",image);
+          document.getElementById("b64").innerHTML = e.target.result;
+        };
+        FR.readAsDataURL( this.files[0] );
+      }
+    }
 
+    document.getElementById("inp").addEventListener("change", readFile, false);
 });
